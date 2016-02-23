@@ -1,0 +1,9 @@
+---
+- name: install Apache
+  apt: name=apache2 state=present
+
+- name: start Apache
+  service: name=apache2 state=running enabled=yes
+
+- name: Hello world
+  copy: src=index.html dest=/var/www/index.html mode=644
